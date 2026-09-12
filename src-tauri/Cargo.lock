@@ -2815,7 +2815,7 @@ dependencies = [
 
 [[package]]
 name = "review-checker"
-version = "0.1.0"
+version = "0.9.1"
 dependencies = [
  "serde",
  "serde_json",

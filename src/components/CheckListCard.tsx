@@ -28,7 +28,6 @@ export function CheckListCard({ caroucelNum, checklist }: CheckListCardProps) {
         {checklist.map((check, index) => {
           return (
             <div key={index} className="flex flex-row justify-start gap-1">
-              {/* TODO: チェックボックスに変更 */}
               <Checkbox checked={carouselProgress[index]} onCheck={() => onCheck(index)} />
               <Text text={check} size="medium" />
             </div>

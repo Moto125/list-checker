@@ -2,8 +2,8 @@ import { atom } from "jotai";
 
 export type ReviewPoints = {
   theme: string;
-  points: string[]
-}
+  points: string[];
+};
 
 /**
  * レビュー観点リスト

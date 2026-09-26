@@ -1,6 +1,11 @@
 import "./App.css";
 import { useAtom } from "jotai";
-import { countAtom, initialAtom, nameAtom, progressAtom } from "./store/reviewStore";
+import {
+  countAtom,
+  initialAtom,
+  nameAtom,
+  progressAtom,
+} from "./store/reviewStore";
 import { InReviewScreen } from "./components/InReviewScreen";
 import { StartScreen } from "./components/StartScreen";
 import { FinishScreen } from "./components/FinishScreen";
@@ -17,7 +22,13 @@ function App() {
       <div className="h-10">
         <Text text={name} size="large" />
       </div>
-      {initial ? <StartScreen /> : caroucelNum < progress.length ? <InReviewScreen /> : <FinishScreen />}
+      {initial ? (
+        <StartScreen />
+      ) : caroucelNum < progress.length ? (
+        <InReviewScreen />
+      ) : (
+        <FinishScreen />
+      )}
     </main>
   );
 }

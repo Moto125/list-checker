@@ -12,12 +12,12 @@ export function FinishScreen() {
     setName("");
     setCaroucelNum(0);
     setInitial(true);
-  }
- 
+  };
+
   return (
     <div>
       <Text text="レビューお疲れさまでした！" size="large" />
-      <Button text="次のレビューを開始する" onPress={resetReview}/>
+      <Button text="次のレビューを開始する" onPress={resetReview} />
     </div>
   );
 }

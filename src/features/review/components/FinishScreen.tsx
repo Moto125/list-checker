@@ -1,7 +1,7 @@
 import { useAtom } from "jotai";
-import { Button } from "./Button";
-import { countAtom, initialAtom, nameAtom } from "../store/reviewStore";
-import { Text } from "./Text";
+import { Button } from "../../../common/Button";
+import { countAtom, initialAtom, nameAtom } from "../../../store/reviewStore";
+import { Text } from "../../../common/Text";
 
 export function FinishScreen() {
   const [_initial, setInitial] = useAtom(initialAtom);

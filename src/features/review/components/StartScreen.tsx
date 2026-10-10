@@ -1,17 +1,19 @@
 import { useAtom } from "jotai";
-import { Button } from "./Button";
+import { Button } from "../../../common/Button";
 import {
   initialAtom,
   nameAtom,
   progressAtom,
   selectedReviewPointsAtom,
-} from "../store/reviewStore";
-import { TextInput } from "./TextInput";
-import { Text } from "./Text";
-import { defaultReviewPoints } from "../data/defaultReviewPoints";
-import { RadioButtons } from "./RadioButtons";
+} from "../../../store/reviewStore";
+import { TextInput } from "../../../common/TextInput";
+import { Text } from "../../../common/Text";
+import { defaultReviewPoints } from "../../../data/defaultReviewPoints";
+import { RadioButtons } from "../../../common/RadioButtons";
+import { useNavigate } from "react-router";
 
 export function StartScreen() {
+  const navigate = useNavigate();
   const [_initial, setInitial] = useAtom(initialAtom);
   const [selectedReviewPoints, setSelectedReviewPoints] = useAtom(
     selectedReviewPointsAtom,
@@ -51,6 +53,7 @@ export function StartScreen() {
       <TextInput value={name} disabled={false} onChange={setName} />
       <Text text="使用するチェックリストを選択してください。" />
       <RadioButtons list={radioList} onChange={onChangeRadio} />
+      <Button text="追加・編集" onPress={() => navigate("/setting")} />
       <Button text="START" disabled={!name} onPress={startReview} />
     </div>
   );

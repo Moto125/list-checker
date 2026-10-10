@@ -1,12 +1,12 @@
 import { useAtom } from "jotai";
-import { Button } from "./Button";
-import { CheckListCard } from "./CheckListCard";
+import { Button } from "../../../common/Button";
+import { CheckListCard } from "../../../common/CheckListCard";
 import {
   countAtom,
   progressAtom,
   selectedReviewPointsAtom,
-} from "../store/reviewStore";
-import { Text } from "./Text";
+} from "../../../store/reviewStore";
+import { Text } from "../../../common/Text";
 
 export function InReviewScreen() {
   const [caroucelNum, setCaroucelNum] = useAtom(countAtom);

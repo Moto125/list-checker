@@ -1,12 +1,11 @@
 import { useAtom } from "jotai";
-import { Button } from "../../../common/Button";
+import { Button, Label } from "@heroui/react";
 import { CheckListCard } from "../../../common/CheckListCard";
 import {
   countAtom,
   progressAtom,
   selectedReviewPointsAtom,
 } from "../../../store/reviewStore";
-import { Text } from "../../../common/Text";
 
 export function InReviewScreen() {
   const [caroucelNum, setCaroucelNum] = useAtom(countAtom);
@@ -21,21 +20,27 @@ export function InReviewScreen() {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <Text text="レビューできた観点をチェックしていきましょう" size="medium" />
-      <Text text={checkListThemes[caroucelNum]} />
+      <Label>レビューできた観点をチェックしていきましょう</Label>
+      <Label>{`チェックリスト ${caroucelNum + 1} / ${progress.length}`}</Label>
+      <Label>{checkListThemes[caroucelNum]}</Label>
       <CheckListCard
         caroucelNum={caroucelNum}
         checklist={checkListItems[caroucelNum]}
       />
 
       <div className="flex items-center gap-4">
-        <Button text="Back" onPress={() => setCaroucelNum(caroucelNum - 1)} />
+        {caroucelNum > 0 && (
+          <Button onPress={() => setCaroucelNum(caroucelNum - 1)} >
+            Back
+          </Button>
+        )}
         <p>{progress}</p>
         <Button
-          disabled={!progress[caroucelNum]?.every(Boolean)}
-          text="Next"
+          isDisabled={!progress[caroucelNum]?.every(Boolean)}
           onPress={() => setCaroucelNum(caroucelNum + 1)}
-        />
+        >
+          Next
+        </Button>
       </div>
     </div>
   );

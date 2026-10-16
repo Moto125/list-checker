@@ -1,7 +1,6 @@
 import { progressAtom } from "../store/reviewStore";
 import { useAtom } from "jotai";
-import { Text } from "./Text";
-import { Checkbox } from "./Checkbox";
+import { Checkbox, CheckboxGroup, Label } from "@heroui/react";
 
 type CheckListCardProps = {
   caroucelNum: number;
@@ -25,20 +24,21 @@ export function CheckListCard({ caroucelNum, checklist }: CheckListCardProps) {
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <Text text={`${caroucelNum + 1} / ${progress.length}`} size="small" />
-      <div className="flex flex-col justify-start min-w-3xs">
+      <Label>{`${caroucelNum + 1} / ${progress.length}`}</Label>
+      <CheckboxGroup>
         {checklist.map((check, index) => {
           return (
-            <div key={index} className="flex flex-row justify-start gap-1">
-              <Checkbox
-                checked={carouselProgress[index]}
-                onCheck={() => onCheck(index)}
-              />
-              <Text text={check} size="medium" />
-            </div>
+            <Checkbox key={index} value={check} onChange={() => onCheck(index)} >
+              <Checkbox.Content>
+                <Checkbox.Control>
+                  <Checkbox.Indicator />
+                </Checkbox.Control>
+                <Label>{check}</Label>
+              </Checkbox.Content>
+            </Checkbox>
           );
         })}
-      </div>
+      </CheckboxGroup>
     </div>
   );
 }

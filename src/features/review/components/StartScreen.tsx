@@ -1,13 +1,11 @@
 import { useAtom } from "jotai";
-import { Button } from "../../../common/Button";
+import { Button, Input, Label } from "@heroui/react";
 import {
   initialAtom,
   nameAtom,
   progressAtom,
   selectedReviewPointsAtom,
 } from "../../../store/reviewStore";
-import { TextInput } from "../../../common/TextInput";
-import { Text } from "../../../common/Text";
 import { defaultReviewPoints } from "../../../data/defaultReviewPoints";
 import { RadioButtons } from "../../../common/RadioButtons";
 import { useNavigate } from "react-router";
@@ -49,12 +47,14 @@ export function StartScreen() {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <Text text="レビュー対象の名称を入力してください。" size="large" />
-      <TextInput value={name} disabled={false} onChange={setName} />
-      <Text text="使用するチェックリストを選択してください。" />
+      <Label>レビュー対象の名称を入力してください。</Label>
+      <Input value={name} disabled={false} onChange={(e) => setName(e.target.value)} />
+      <Label>使用するチェックリストを選択してください。</Label>
       <RadioButtons list={radioList} onChange={onChangeRadio} />
-      <Button text="追加・編集" onPress={() => navigate("/setting")} />
-      <Button text="START" disabled={!name} onPress={startReview} />
+      <Button onPress={() => navigate("/setting")} >
+        追加・編集
+      </Button>
+      <Button isDisabled={!name || selectedReviewPoints.length === 0} onPress={startReview} >START</Button>
     </div>
   );
 }

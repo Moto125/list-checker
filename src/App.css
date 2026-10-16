@@ -1,11 +1,12 @@
 @import "tailwindcss";
+@import "@heroui/styles";
 
-@theme {
+/* @theme {
   --color-primary: #b6cc62;
   --color-disabled: #0c1300;
   --color-text-primary: #051404;
   --color-text-secondary: #eaeff3;
-}
+} */
 
 /* .logo.vite:hover {
   filter: drop-shadow(0 0 2em #747bff);

@@ -5,9 +5,9 @@ import Review from "./features/review/Review";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <BrowserRouter>
-  <Routes>
-    <Route index element={<Review />} />
-    <Route path="/setting" element={<SettingCheckList />} />
-  </Routes>
+    <Routes>
+      <Route index element={<Review />} />
+      <Route path="/setting" element={<SettingCheckList />} />
+    </Routes>
   </BrowserRouter>,
 );

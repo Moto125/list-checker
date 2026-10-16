@@ -1,4 +1,4 @@
-import { Text } from "./Text";
+import { Label, Radio, RadioGroup } from "@heroui/react";
 
 type RadioButtonProps = {
   list: {
@@ -9,17 +9,15 @@ type RadioButtonProps = {
 };
 export function RadioButtons({ list, onChange }: RadioButtonProps) {
   return (
-    <div>
+    <RadioGroup onChange={(nextValue) => onChange(nextValue)}>
       {list.map((option, idx) => (
-        <div key={idx} className="flex items-center justify-start gap-2">
-          <input
-            type="radio"
-            value={option.id}
-            onChange={() => onChange(option.id)}
-          />
-          <Text text={option.label} />
-        </div>
-      ))}
-    </div>
+          <Radio key={idx} value={option.id}>
+            <Radio.Content>
+              <Radio.Control><Radio.Indicator /></Radio.Control>
+              <Label>{option.label}</Label>
+            </Radio.Content>
+          </Radio>
+        ))}
+    </RadioGroup>
   );
 }

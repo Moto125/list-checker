@@ -9,7 +9,7 @@ import {
 import { InReviewScreen } from "./components/InReviewScreen";
 import { StartScreen } from "./components/StartScreen";
 import { FinishScreen } from "./components/FinishScreen";
-import { Text } from "../../common/Text";
+import { Label } from "@heroui/react";
 
 function Review() {
   const [initial, _setInitial] = useAtom(initialAtom);
@@ -20,7 +20,7 @@ function Review() {
   return (
     <main className="flex flex-col items-center">
       <div className="h-10">
-        <Text text={name} size="large" />
+        <Label>{name}</Label>
       </div>
       {initial ? (
         <StartScreen />

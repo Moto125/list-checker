@@ -1,7 +1,6 @@
 import { useAtom } from "jotai";
-import { Button } from "../../../common/Button";
+import { Button, Label } from "@heroui/react";
 import { countAtom, initialAtom, nameAtom } from "../../../store/reviewStore";
-import { Text } from "../../../common/Text";
 
 export function FinishScreen() {
   const [_initial, setInitial] = useAtom(initialAtom);
@@ -16,8 +15,10 @@ export function FinishScreen() {
 
   return (
     <div>
-      <Text text="レビューお疲れさまでした！" size="large" />
-      <Button text="次のレビューを開始する" onPress={resetReview} />
+      <Label>レビューお疲れさまでした！</Label>
+      <Button  variant="outline" onPress={resetReview} >
+        次のレビューを開始する
+      </Button>
     </div>
   );
 }

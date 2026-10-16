@@ -1,16 +1,21 @@
 import { useNavigate } from "react-router";
 import "../../App.css";
-import { Button } from "../../common/Button";
-import { Text } from "../../common/Text";
+import { Button, Label } from "@heroui/react";
 function SettingCheckList() {
   const navigate = useNavigate();
 
   return (
     <div className="flex flex-col items-center">
       <div className="h-10">
-        <Text text="チェックリスト編集画面" size="large" />
+        <Label>チェックリスト編集画面</Label>
       </div>
-      <Button text="完了" onPress={() => navigate("/")} />
+      {/* データ入力 */}
+      <div>
+        
+      </div>
+      <Button onPress={() => navigate("/")} >
+        完了
+      </Button>
     </div>
   );
 }

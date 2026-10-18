@@ -30,9 +30,7 @@ export function InReviewScreen() {
 
       <div className="flex items-center gap-4">
         {caroucelNum > 0 && (
-          <Button onPress={() => setCaroucelNum(caroucelNum - 1)} >
-            Back
-          </Button>
+          <Button onPress={() => setCaroucelNum(caroucelNum - 1)}>Back</Button>
         )}
         <p>{progress}</p>
         <Button

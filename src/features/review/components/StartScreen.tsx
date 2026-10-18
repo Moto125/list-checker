@@ -48,13 +48,28 @@ export function StartScreen() {
   return (
     <div className="flex flex-col items-center gap-4">
       <Label>レビュー対象の名称を入力してください。</Label>
-      <Input value={name} disabled={false} onChange={(e) => setName(e.target.value)} />
+      <Input
+        value={name}
+        disabled={false}
+        onChange={(e) => setName(e.target.value)}
+      />
       <Label>使用するチェックリストを選択してください。</Label>
       <RadioButtons list={radioList} onChange={onChangeRadio} />
-      <Button onPress={() => navigate("/setting")} >
-        追加・編集
+      <div className="flex flex-row gap-2">
+        <Button onPress={() => navigate("/setting")}>新規</Button>
+        <Button
+          isDisabled={selectedReviewPoints.length === 0}
+          onPress={() => navigate("/setting")}
+        >
+          編集
+        </Button>
+      </div>
+      <Button
+        isDisabled={!name || selectedReviewPoints.length === 0}
+        onPress={startReview}
+      >
+        START
       </Button>
-      <Button isDisabled={!name || selectedReviewPoints.length === 0} onPress={startReview} >START</Button>
     </div>
   );
 }

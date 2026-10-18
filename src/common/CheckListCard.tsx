@@ -28,7 +28,7 @@ export function CheckListCard({ caroucelNum, checklist }: CheckListCardProps) {
       <CheckboxGroup>
         {checklist.map((check, index) => {
           return (
-            <Checkbox key={index} value={check} onChange={() => onCheck(index)} >
+            <Checkbox key={index} value={check} onChange={() => onCheck(index)}>
               <Checkbox.Content>
                 <Checkbox.Control>
                   <Checkbox.Indicator />

@@ -16,7 +16,7 @@ export function FinishScreen() {
   return (
     <div>
       <Label>レビューお疲れさまでした！</Label>
-      <Button  variant="outline" onPress={resetReview} >
+      <Button variant="outline" onPress={resetReview}>
         次のレビューを開始する
       </Button>
     </div>

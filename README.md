@@ -38,15 +38,15 @@
    ```
 1. 依存関係のインストール
    ```bash
-   npm install
+   bun install
    ```
 1. 開発モードでの起動
    ```bash
-   npm run tauri dev
+   bun run tauri dev
    ```
 1. アプリ（.exe / .app）のビルド
    ```bash
-   npm run tauri build
+   bun run tauri build
    ```
 ビルド完了後、src-tauri/target/release/bundle/ 配下に実行ファイル（.exe等）が生成されます。
 

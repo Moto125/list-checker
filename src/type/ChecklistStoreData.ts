@@ -9,7 +9,7 @@ export type ChecklistData = {
   id: string;
   title: string;
   items: string[];
-  lastUpdated: number;
+  lastUpdated?: number;
 };
 
 /**

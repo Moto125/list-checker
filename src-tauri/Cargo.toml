@@ -1,5 +1,5 @@
 [package]
-name = "review-checker"
+name = "list-checker"
 version = "0.9.1"
 description = "A Tauri App"
 authors = ["you"]

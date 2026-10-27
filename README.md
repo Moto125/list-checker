@@ -1,10 +1,10 @@
 # list-checker
-ローカルで動作するチェックリストの作成・管理・実行を行うデスクトップアプリケーションです。
-
+チェックリストの作成・管理・実行を行うデスクトップアプリケーションです。
 
 ## 💡 開発の背景 / 目的
 自分自身が業務や開発において「レビュー観点を網羅できているか」を効率的に確認するために開発した個人プロジェクトです。
 単なるレビュー用のチェックツールにとどまらず、汎用的なチェックリストの作成から実行までをスムーズに行える設計にしています。
+また、本プロジェクトは使用技術やコードの理解のため、コーディング工程で生成AIを使用していません。今後、レビューやテストなどに生成AIを活用する予定です。
 
 ※本アプリはポートフォリオとしての公開および個人利用を主目的としており、不特定多数への配布を目的としたパッケージ公開は行っておりません。
 
@@ -19,14 +19,14 @@
 
 ## 🛠️ 使用技術 (Tech Stack)
 - Framework: [Tauri](https://tauri.app/) (v2)
-- Frontend: React + TypeScript
+- Frontend: React + TypeScript + HeroUI + Tailwind CSS
 - Backend: Rust
 
 
 ## 🚀 ローカルでのビルド・実行手順
 
 ### 前提条件 (Prerequisites)
-- [Node.js](https://nodejs.org/) (v18以上推奨)
+- [Node.js](https://nodejs.org/) 
 - [Rust](https://www.rust-lang.org/) (cargo)
 - Tauriのビルドに必要なシステム依存関係（[Tauri公式ドキュメント](https://tauri.app/v1/guides/getting-started/prerequisites)を参照）
 
@@ -49,7 +49,3 @@
    bun run tauri build
    ```
 ビルド完了後、src-tauri/target/release/bundle/ 配下に実行ファイル（.exe等）が生成されます。
-
-## 📝 今後の展望・ロードマップ (Optional)
-- UI/UXの改善
-- チェックリストのカテゴリ別管理・実行機能の追加

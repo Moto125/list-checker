@@ -1,20 +1,21 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "review-checker",
+  "productName": "list-checker",
   "version": "0.9.1",
-  "identifier": "com.moto.review-checker",
+  "identifier": "com.moto.list-checker",
   "build": {
-    "beforeDevCommand": "npm run dev",
+    "beforeDevCommand": "bun run dev",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "npm run build",
+    "beforeBuildCommand": "bun run build",
     "frontendDist": "../dist"
   },
   "app": {
     "windows": [
       {
-        "title": "review-checker",
-        "width": 800,
-        "height": 600
+        "title": "list-checker",
+        "width": 640,
+        "height": 480,
+        "backgroundColor": "#e5e7eb"
       }
     ],
     "security": {

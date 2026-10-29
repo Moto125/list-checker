@@ -49,3 +49,9 @@
    bun run tauri build
    ```
 ビルド完了後、src-tauri/target/release/bundle/ 配下に実行ファイル（.exe等）が生成されます。
+
+## 📝 今後の展望・ロードマップ (Optional)
+- UI/UXの改善
+  - アニメーション追加
+  - ウィンドウサイズ調整
+  - クリップボードからの追加

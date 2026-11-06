@@ -5,11 +5,19 @@ type RadioButtonProps = {
     id: string;
     label: string;
   }[];
+  defaultValue?: string;
   onChange: (id: string) => void;
 };
-export function RadioButtons({ list, onChange }: RadioButtonProps) {
+export function RadioButtons({
+  list,
+  defaultValue,
+  onChange,
+}: RadioButtonProps) {
   return (
-    <RadioGroup onChange={(nextValue) => onChange(nextValue)}>
+    <RadioGroup
+      defaultValue={defaultValue}
+      onChange={(nextValue) => onChange(nextValue)}
+    >
       {list.map((option, idx) => (
         <Radio key={idx} value={option.id}>
           <Radio.Content>

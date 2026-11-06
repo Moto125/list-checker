@@ -52,7 +52,11 @@ export function StartScreen() {
         onChange={(e) => setName(e.target.value)}
       />
       <Label>使用するチェックリストを選択してください。</Label>
-      <RadioButtons list={radioList} onChange={onChangeRadio} />
+      <RadioButtons
+        list={radioList}
+        defaultValue={selectedItems?.id}
+        onChange={onChangeRadio}
+      />
       <div className="flex flex-row gap-2">
         <Button onPress={() => navigate("/setting")}>新規</Button>
         <Button
